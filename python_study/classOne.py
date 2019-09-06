@@ -11,3 +11,18 @@ print_lyrics()
 
 def displayInventory(inventory):
     print("Inventory:")
+
+def add(x,y=0):
+    result = x + y
+    q = 4
+    return result, q
+
+def print_code(code):
+    print(code)
+
+a = add(1, 2)
+
+print(a)
+
+p1_add, p2_add = add(3, 4)
+print(p1_add, p2_add)
