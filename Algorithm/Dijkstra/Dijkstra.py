@@ -1,37 +1,23 @@
-graph={}
-graph["start"] = {}
-graph["start"]["a"] = 6
-graph["start"]["b"] = 2
-graph["a"]={}
-graph["b"]={}
-graph["a"]["end"] = 1
-graph["b"]["a"] = 3
-graph["b"]["end"] = 5
-graph["end"] = {}
-print(graph["start"].keys())
+graph = {"start": {"a": 6, "b": 2}, "a": {"end": 1}, "b": {"a": 3, "end": 5}, "end": {}}
 
 infinity = float("inf")
-costs = {}
-costs["a"] = 6
-costs["b"] = 2
-costs["end"] = infinity
+costs = {"a": 6, "b": 2, "end": infinity}
 
-parents = {}
-parents["a"]="start"
-parents["b"]="start"
-parents["end"]=None
+parents = {"a": "start", "b": "start", "end": None}
 
-processed=[]
+processed = []
+
 
 def find_lowest_cost_node(costs):
     lowest_cost = float("inf")
     lowest_cost_node = None
     for node in costs.keys():
         cost = costs[node]
-        if cost <lowest_cost and node not in processed:
+        if cost < lowest_cost and node not in processed:
             lowest_cost = cost
             lowest_cost_node = node
     return lowest_cost_node
+
 
 node = find_lowest_cost_node(costs)
 
@@ -44,6 +30,6 @@ while node is not None:
             costs[n] = new_cost
             parents[n] = node
     processed.append(node)
-    node =  find_lowest_cost_node(costs)
+    node = find_lowest_cost_node(costs)
 
 print(parents)
