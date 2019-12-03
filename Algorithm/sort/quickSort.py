@@ -7,4 +7,5 @@ def quickSort(array):
         greater = [i for i in array[1:] if i > pivot]
         return quickSort(less) + [pivot] + quickSort(greater)
 
-print(quickSort([5,4,3,6,2,10]))
+
+print(quickSort([5, 4, 3, 6, 2, 10]))
