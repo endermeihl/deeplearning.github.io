@@ -1,3 +1,4 @@
+#!/usr/local/bin/python3.7
 import numpy as np
 x=np.array([[6,22,33,42,11],[2,3,4,12,12],[5,78,2,34,0]])
 y=np.array([3,4,2,33,42])
